@@ -1,0 +1,24 @@
+<!-- base.html (o cualquier otro template) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <div>
+        <!-- Otro contenido del encabezado -->
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <!-- Otro contenido del encabezado -->
+
+    </div>
+</head>
+<body>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
