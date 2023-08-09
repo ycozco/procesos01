@@ -1,24 +1,25 @@
-<!-- base.html (o cualquier otro template) -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    <div>
-        <!-- Otro contenido del encabezado -->
-    {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-    <a href="{% url 'login' %}">Login</a>
-    {% endif %}
-    <!-- Otro contenido del encabezado -->
-
-    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Sitio Web{% endblock %}</title>
 </head>
 <body>
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
+    <nav>
+        <!-- Barra de navegación aquí -->
+        <a href="{% url 'clases:home' %}">Ir a la página de inicio</a>
+    </nav>
+    <header>
+        <!-- Encabezado aquí -->
+    </header>
 
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Pie de página aquí -->
+    </footer>
 </body>
 </html>

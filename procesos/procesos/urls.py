@@ -5,9 +5,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from clases import views
 urlpatterns = [
-    path('', views.inicio_view, name='inicio'),
     path('admin/', admin.site.urls),
-    path('clases/', include('clases.urls')),  # o el nombre de la app donde tengas tus urls
+    path('', include('clases.urls')),  # Incluye las URLs de la app 'clases'
+    # Otras URLs de tu proyecto pueden ir aquí
+
 ]
 
 # Agrega la siguiente línea para servir los archivos estáticos

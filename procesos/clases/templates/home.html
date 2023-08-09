@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Mi Sitio Web{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido a Mi Sitio Web</h1>
+    <p>Explora nuestras lecciones y mejora tus habilidades.</p>
+    <a href="{% url 'clases:lista' %}">Ver lecciones</a>
+{% endblock %}

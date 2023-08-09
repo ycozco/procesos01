@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalles de la Lección - {{ leccion.titulo }}{% endblock %}
+
+{% block content %}
+    <h1>{{ leccion.titulo }}</h1>
+    <p>{{ leccion.descripcion }}</p>
+    <img src="{{ leccion.ruta_imagen }}" alt="{{ leccion.titulo }}">
+    <p>{{ leccion.contenido_texto }}</p>
+
+    <!-- Aquí podrías agregar el contenido de los ejercicios asociados a la lección -->
+{% endblock %}
