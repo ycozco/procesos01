@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mi Sitio Web{% endblock %}</title>
+    <!-- Encabezado del documento -->
 </head>
 <body>
     <nav>
         <!-- Barra de navegación aquí -->
         <a href="{% url 'clases:home' %}">Ir a la página de inicio</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'clases:perfil' %}">Perfil</a>
+            <a href="{% url 'clases:logout' %}">Cerrar sesión</a>
+        {% else %}
+            <a href="{% url 'clases:login' %}">Iniciar sesión</a>
+            <a href="{% url 'clases:registro' %}">Registrarse</a>
+        {% endif %}
     </nav>
     <header>
         <!-- Encabezado aquí -->

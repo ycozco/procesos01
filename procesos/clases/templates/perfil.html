@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Perfil de {{ user.username }}</h1>
+
+    <!-- Tu contenido del perfil aquí -->
+
+    <h2>Evaluaciones:</h2>
+    <ul>
+        {% for evaluacion in evaluaciones %}
+        <li>{{ evaluacion.fecha }} - Calificación: {{ evaluacion.calificacion }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Resultados:</h2>
+    <ul>
+        {% for resultado in resultados %}
+        <li>{{ resultado.fecha }} - Respuesta: {{ resultado.id_respuesta }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Progreso:</h2>
+    <ul>
+        {% for progreso in progreso %}
+        <li>{{ progreso.id_leccion }} - Completada: {{ progreso.completada }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Puntuaciones:</h2>
+    <ul>
+        {% for puntuacion in puntuaciones %}
+        <li>{{ puntuacion.id_leccion }} - Puntuación: {{ puntuacion.puntuacion }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Otros contenidos del perfil -->
+{% endblock %}
