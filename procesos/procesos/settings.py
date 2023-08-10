@@ -81,7 +81,12 @@ DATABASES = {
         'PASSWORD': '112358',    # La contraseña de la base de datos
         'HOST': '34.170.131.195',  # La dirección IP de la base de datos
         'PORT': '3306',          # El puerto de la base de datos MySQL
+    },
+    'test': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'test_db.sqlite3'),  # Base de datos de prueba
     }
+
 }
 
 # Password validation
